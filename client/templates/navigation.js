@@ -1,5 +1,3 @@
-Meteor.subscribe("conferences");
-
 Template.header.events({
     "submit .conf-select-form": function(event) {
         event.preventDefault();
