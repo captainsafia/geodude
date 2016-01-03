@@ -11,6 +11,19 @@ Template.posts.helpers({
     }
 });
 
+Template.posts.events({
+    "click .upvote": function(event) {
+        event.preventDefault();
+        var postId = event.target.id;
+        Meteor.call("upvote", postId);
+    },
+    "click .downvote": function(event) {
+        event.preventDefault();
+        var postId = event.target.id;
+        Meteor.call("downvote", postId);
+    }
+});
+
 Template.registerHelper('formatDate', function(date) {
     var day = date.getDate();
     var month = date.getMonth() + 1;
