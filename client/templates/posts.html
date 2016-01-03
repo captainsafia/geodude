@@ -16,6 +16,17 @@
     <div class="row col-lg-12">
         <h3>{{content}}</h3>
         <h4>{{formatDate created}}</h4>
+        {{#if votes}}
+            <h5>Votes: {{votes}}</h5>
+        {{else}}
+            <h5>Votes: 0</h5>
+        {{/if}}
+        <button type="submit" class="btn btn-success upvote" id="{{_id}}">
+            Upvote
+        </button>
+        <button type="submit" class="btn btn-success downvote" id="{{_id}}">
+            Downvote
+        </button>
         <hr>
     </div>
 </template>
