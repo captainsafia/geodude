@@ -3,7 +3,8 @@ Template.posts.helpers({
         if (Session.get("activeConference")) {
             var code = Session.get("activeConference");
             return Posts.find({
-                code: code
+                code: code,
+                votes: {$gt: -5}
             });
         } else {
             return false;
