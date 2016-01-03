@@ -1,3 +1,5 @@
+Meteor.subscribe("posts");
+
 Template.posts.helpers({
     posts: function() {
         if (Session.get("activeConference")) {
