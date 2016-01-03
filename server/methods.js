@@ -16,7 +16,16 @@ Meteor.methods({
         return Posts.insert({
             content: post,
             code: code,
-            created: new Date()
+            created: new Date(),
+            votes: 0
         });
+    },
+
+    upvote: function(post) {
+        Posts.update(post, {$inc: {votes: 1}});
+    },
+
+    downvote: function(post) {
+        Posts.update(post, {$inc: {votes: -1}});
     }
 });
