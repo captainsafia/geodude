@@ -1,0 +1,21 @@
+<template name="posts">
+    <div class="container col-lg-12">
+        {{#if posts.count}}
+            {{#each posts}}
+                {{> post}}
+            {{/each}}
+        {{else}}
+            <h1 class="text-center">
+                No posts in this conference yet!
+            </h1>
+        {{/if}}
+    </div>
+</template>
+
+<template name="post">
+    <div class="row col-lg-12">
+        <h3>{{content}}</h3>
+        <h4>{{formatDate created}}</h4>
+        <hr>
+    </div>
+</template>
